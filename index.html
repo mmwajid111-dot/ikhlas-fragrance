@@ -137,7 +137,16 @@ color:gold;
 text-decoration:none;
 margin:0 10px;
 }
-
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 </style>
 
 </head>
@@ -160,6 +169,7 @@ margin:0 10px;
 
 <section class="hero">
 <img src="cover.png" alt="Cover" style="width:100%;">
+<div style="background:rgba(0,0,0,0.45);padding:25px;border-radius:15px;backdrop-filter:blur(4px);animation:fadeIn 1.5s;">
 
 <h1>Luxury Perfumes</h1>
 
@@ -172,6 +182,7 @@ href="https://wa.me/923008960237">
 Order On WhatsApp
 </a>
 
+</div>
 </section>
 
 <section class="products" id="products">
