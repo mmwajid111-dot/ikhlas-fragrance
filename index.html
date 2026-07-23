@@ -252,6 +252,15 @@ Order On WhatsApp
 
 <section class="products" id="products">
 
+<div style="text-align:center;margin:20px 0;">
+    <input
+        type="text"
+        id="searchInput"
+        onkeyup="searchProducts()"
+        placeholder="🔍 Search Perfume..."
+        style="width:80%;max-width:400px;padding:12px;border:2px solid gold;border-radius:30px;font-size:16px;outline:none;">
+</div>
+
 <div class="card">
 
 <img src="haider.jpg" alt="Haider">
@@ -429,5 +438,21 @@ href="https://wa.me/923008960237"
 target="_blank">
 💬
 </a>
+<script>
+function searchProducts() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        let text = cards[i].innerText.toLowerCase();
+
+        if (text.indexOf(input) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>
