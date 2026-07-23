@@ -277,6 +277,18 @@ Order On WhatsApp
 
 <p>Premium Long Lasting Perfume</p>
 
+<button onclick="addToCart('Haider')"
+style="background:gold;
+color:black;
+padding:10px 20px;
+border:none;
+border-radius:25px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;">
+🛒 Add to Cart
+</button>
+
 <div class="price">
 Rs. 2590
 </div>
@@ -301,6 +313,18 @@ Order Now
 🟢 AVAILABLE
 </div>
 <p>Luxury Signature Collection</p>
+
+<button onclick="addToCart('Signature')"
+style="background:gold;
+color:black;
+padding:10px 20px;
+border:none;
+border-radius:25px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;">
+🛒 Add to Cart
+</button>
 
 <div class="price">
 Rs. 2590
@@ -456,6 +480,33 @@ function searchProducts() {
             cards[i].style.display = "none";
         }
     }
+}
+
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    document.getElementById("cart-count").innerText = cart.length;
+    alert(name + " added to cart!");
+}
+
+function openCart() {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    let message = "🛒 Cart Items:\n\n";
+    let total = 0;
+
+    cart.forEach(item => {
+        message += item.name + " - Rs. " + item.price + "\n";
+        total += item.price;
+    });
+
+    message += "\n\nTotal: Rs. " + total;
+
+    alert(message);
 }
 </script>
 </body>
