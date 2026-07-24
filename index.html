@@ -506,7 +506,43 @@ function openCart() {
 
     message += "\n\nTotal: Rs. " + total;
 
-    alert(message);
+    let proceed = confirm(message + "\n\nProceed to Checkout?");
+if (proceed) {
+    openCheckout();
+}
+}
+function openCheckout() {
+  let method = prompt(
+`Select Payment Method:
+
+1 = JazzCash
+2 = Cash on Delivery`);
+
+  if (method == "1") {
+    alert(
+`JazzCash Payment
+
+Send payment to:
+📱 03XXXXXXXXX
+
+After payment send screenshot on WhatsApp.
+
+✅ Order will be confirmed after payment.`);
+  }
+
+  else if (method == "2") {
+    alert(
+`Cash on Delivery
+
+⚠ Advance Required: 10% of total amount.
+
+Pay 10% via JazzCash first.
+Remaining 90% will be paid on delivery.`);
+  }
+
+  else {
+    alert("Invalid option.");
+  }
 }
 </script>
 </body>
