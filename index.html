@@ -512,6 +512,12 @@ if (proceed) {
 }
 }
 function openCheckout() {
+
+let customerName = prompt("Enter Your Full Name:");
+let customerPhone = prompt("Enter Your Mobile Number:");
+let customerCity = prompt("Enter Your City:");
+let customerAddress = prompt("Enter Your Complete Address:");
+
   let method = prompt(
 `Select Payment Method:
 
@@ -528,6 +534,18 @@ Send payment to:
 After payment send screenshot on WhatsApp.
 
 ✅ Order will be confirmed after payment.`);
+
+let order =
+"🛍️ New Order\n\n" +
+"👤 Name: " + customerName + "\n" +
+"📞 Phone: " + customerPhone + "\n" +
+"🏙️ City: " + customerCity + "\n" +
+"🏠 Address: " + customerAddress + "\n\n" +
+"💳 Payment: JazzCash";
+
+window.open("https://wa.me/923008960237?text=" + encodeURIComponent(order), "_blank");
+
+return;
   }
 
   else if (method == "2") {
